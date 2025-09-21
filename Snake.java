@@ -15,19 +15,34 @@ public class Snake {
             board.setCell(initPos.getRow(),initPos.getCol(), Type.SNAKE);
         }
 
+    }
 
+    public void grow(Cell nextCell, Board board){
+       head = nextCell;
+       head.setType(Type.SNAKE);
+       board.setCell(head.getRow(), head.getCol(), Type.SNAKE);
+       SnakePartList.addFirst(head);
+    }
+    public void move(Cell nextCell, Board board){
+        // if head eats food
+        //         move head upwards do not remove end bit.
+        if( nextCell.getType() != Type.FOOD){
+            Cell tail = SnakePartList.removeLast();
+            board.setCell(tail.getRow(),tail.getCol(),Type.EMPTY);
+        };
+
+        head = nextCell;
+        head.setType(Type.SNAKE);
+        board.setCell(head.getRow(), head.getCol(), Type.SNAKE);
+        SnakePartList.addFirst(head);
 
     }
 
-
-    public void snakeHead(int rowC, int colC){
-        // ik moet een start positie hebben misschien te midden het board.
-
+    public LinkedList<Cell> getSnakePartList(){
+        return SnakePartList;
     }
-    public void movementSnake(){
 
-    }
-    public void growSnake(){
-
+    public Cell getHead(){
+        return head;
     }
 }
