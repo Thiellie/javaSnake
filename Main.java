@@ -13,6 +13,8 @@ public class Main {
 
 
     public static void main(String[] args){
+
+//        TODO gamframe wordt het frame gemaakt, maar in snake word het board gemaakt en zijn er ook een aantal gamFrame elementen die besproken worden
         new GameFrame();
     }
 }

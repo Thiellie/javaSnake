@@ -9,7 +9,7 @@ public class GamePanel extends JPanel implements ActionListener{
     static int UNIT_SIZE = 25;
     static int ROWSIZE = SCREEN_HEIGHT/UNIT_SIZE;
     static int COLSIZE = SCREEN_WIDTH/UNIT_SIZE;
-    static int DELAY = 75;
+    static int DELAY = 100;
     boolean running = false;
     Timer timer;
     Board board;
@@ -23,17 +23,15 @@ public class GamePanel extends JPanel implements ActionListener{
 
 
 
-    public GamePanel(){
+    public GamePanel(GameFrame frame){
         board = new Board(ROWSIZE, COLSIZE);
         initPos = new Cell(ROWSIZE/2,(COLSIZE/2)-start+1);
         snake = new Snake(initPos,board);
-        System.out.println(snake);
         this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
         this.setBackground(Color.BLACK);
         this.setFocusable(true);
         this.addKeyListener(new myKeyAdapter());
         startGame();
-
     }
 
     public void startGame(){
