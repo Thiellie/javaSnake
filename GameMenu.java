@@ -25,9 +25,6 @@ public class GameMenu extends JPanel{
                     gamePanel.startGame();
 
                     //TODO overschakelen van GameMenu frame naar GamePanel snek game.
-                    JFrame window = (JFrame) SwingUtilities.getWindowAncestor(GameMenu.this);
-                    window.setContentPane(new GamePanel();  // jouw snake game hier
-                    window.revalidate(); // update GUI
                 }
             }
         });
