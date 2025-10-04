@@ -8,11 +8,11 @@ public class GameFrame extends JFrame {
     private JPanel mainPanel;
 
     public GameFrame(){
-        cardLayout = new CardLayout();
-        mainPanel = new JPanel(cardLayout);
+        CardLayout layout = new CardLayout();
+        JPanel mainPanel = new JPanel(layout);
 
-        //GamePanel gamePanel = new GamePanel(this);
-        GameMenu gameMenu = new GameMenu();
+        GamePanel gamePanel = new GamePanel(this);
+        GameMenu gameMenu = new GameMenu(gamePanel);
         mainPanel.add(gameMenu, "Menu");
         //mainPanel.add(gamePanel, "Game");
 
